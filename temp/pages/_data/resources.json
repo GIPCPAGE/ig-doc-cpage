@@ -13,7 +13,7 @@
     "title" : "Template d'IG FHIR en Français",
     "titlelang" : {
     },
-    "date" : "2025-12-29T00:20:28+01:00",
+    "date" : "2025-12-29T00:23:05+01:00",
     "description" : "Un template pour créer des Implementation Guides FHIR avec style personnalisé et langue française",
     "descriptionlang" : {
     },
@@ -45,7 +45,7 @@
     "title" : "Mon Profil Patient",
     "titlelang" : {
     },
-    "date" : "2025-12-29T00:20:28+01:00",
+    "date" : "2025-12-29T00:23:05+01:00",
     "description" : "Un exemple de profil patient personnalisé",
     "descriptionlang" : {
     },

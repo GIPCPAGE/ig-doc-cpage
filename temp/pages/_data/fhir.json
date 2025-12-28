@@ -15,7 +15,7 @@
   "toolingVersion" : "5.0.0",
   "toolingRevision" : "3",
   "toolingVersionFull" : "5.0.0 (3)",
-  "genDate" : "Mon, Dec 29, 2025 00:20+0100",
+  "genDate" : "Mon, Dec 29, 2025 00:23+0100",
   "genDay" : "29/12/2025",
   "totalFiles" : 11,
   "processedFiles" : 16,
@@ -254,7 +254,7 @@
         "telecom" : ["https://www.cpage.example", "contact@cpage.example"]
       }
     ],
-    "date" : "2025-12-29T00:20:28+01:00",
+    "date" : "2025-12-29T00:23:05+01:00",
     "description" : "Un template pour créer des Implementation Guides FHIR avec style personnalisé et langue française",
     "descriptionlang" : {
     },

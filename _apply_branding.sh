@@ -12,8 +12,8 @@ fi
 # Copier les assets du template
 echo "📋 Copie des assets CPage..."
 mkdir -p output/assets/images
-cp "../ig-template-cpage/template/content/assets/images/logo-cpage.png" "output/assets/images/" 2>/dev/null || echo "⚠️  Logo non trouvé dans le template"
-cp "../ig-template-cpage/template/content/assets/css/project.css" "output/assets/css/" 2>/dev/null || echo "⚠️  CSS non trouvé dans le template"
+cp "template/content/assets/images/logo-cpage.png" "output/assets/images/" 2>/dev/null || echo "⚠️  Logo non trouvé dans le template local"
+cp "template/content/assets/css/project.css" "output/assets/css/" 2>/dev/null || echo "⚠️  CSS non trouvé dans le template local"
 
 # Appliquer le branding à index.html
 if [ -f "output/index.html" ]; then

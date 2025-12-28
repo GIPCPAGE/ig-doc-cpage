@@ -23,7 +23,7 @@ jobs:
 
     - name: Cache FHIR Publisher
       id: cache-publisher
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: input-cache/publisher.jar
         key: ${{ runner.os }}-publisher-${{ hashFiles('**/publisher.jar') }}
@@ -46,7 +46,7 @@ jobs:
         ./_genonce.sh
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: ig-output
@@ -66,13 +66,13 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Download build artifacts
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: ig-output
         path: output/
 
     - name: Setup Pages
-      uses: actions/configure-pages@v3
+      uses: actions/configure-pages@v5
 
     - name: Upload to GitHub Pages
       uses: actions/upload-pages-artifact@v2

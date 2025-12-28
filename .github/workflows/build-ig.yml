@@ -1,0 +1,84 @@
+name: Build FHIR IG
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Cache FHIR Publisher
+      id: cache-publisher
+      uses: actions/cache@v3
+      with:
+        path: input-cache/publisher.jar
+        key: ${{ runner.os }}-publisher-${{ hashFiles('**/publisher.jar') }}
+        restore-keys: |
+          ${{ runner.os }}-publisher-
+
+    - name: Download FHIR Publisher
+      if: steps.cache-publisher.outputs.cache-hit != 'true'
+      run: |
+        mkdir -p input-cache
+        curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o input-cache/publisher.jar
+
+    - name: Make scripts executable
+      run: |
+        chmod +x _genonce.sh
+        chmod +x _apply_branding.sh
+
+    - name: Build IG with CPage branding
+      run: |
+        ./_genonce.sh
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: ig-output
+        path: output/
+        retention-days: 30
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Download build artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: ig-output
+        path: output/
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+
+    - name: Upload to GitHub Pages
+      uses: actions/upload-pages-artifact@v2
+      with:
+        path: output/
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2

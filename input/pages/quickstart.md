@@ -10,6 +10,125 @@ Bienvenue ! Cette page vous guide pour créer votre premier Implementation Guide
 - **Environnement configuré** : Si ce n'est pas fait, consultez la page [Installation](installation.html)
 - **Dépôt cloné** : Vous travaillez dans un dossier IG (comme celui-ci)
 
+## Configuration après clonage du template IG
+
+Après avoir cloné le template IG CPage, vous devez configurer plusieurs fichiers pour personnaliser votre IG. Cette étape est cruciale pour éviter les conflits et personnaliser votre guide d'implémentation.
+
+### 1. Choix de l'ID dans sushi-config.yaml
+
+L'ID doit être **unique et représentatif** de votre projet :
+
+```yaml
+id: mon-projet-ig-fhir  # Changez ceci !
+```
+
+**Règles pour choisir l'ID :**
+- Utilisez des minuscules et des tirets (pas d'espaces)
+- Évitez les caractères spéciaux
+- Rendez-le unique (votre nom d'organisation + nom du projet)
+- Exemples : `cpage-patient-management`, `hopital-x-radiologie`
+
+### 2. Configuration du sushi-config.yaml
+
+Modifiez les informations principales :
+
+```yaml
+id: mon-projet-ig-fhir
+canonical: https://mon-organisation.github.io/mon-projet-ig  # URL de publication
+name: Mon Projet IG FHIR
+title: "Guide d'implémentation FHIR - Mon Projet"
+publisher:
+  name: Mon Organisation
+  url: https://www.mon-organisation.fr
+contact:
+  - name: Équipe FHIR
+    telecom:
+      - system: email
+        value: fhir@mon-organisation.fr
+description: >-
+  Description détaillée de votre IG et de son objectif.
+version: 0.1.0  # Version sémantique
+date: 2025-12-30  # Date du jour
+copyrightYear: 2025  # Année en cours
+```
+
+**Points importants :**
+- `canonical` : URL où sera publié votre IG (GitHub Pages)
+- `publisher` : Vos informations d'organisation
+- `description` : Expliquez l'objectif de votre IG
+- Gardez `fhirVersion: 4.0.1` et `jurisdiction: urn:iso:std:iso:3166#FR`
+
+### 3. Configuration du ig.ini
+
+Ce fichier contrôle la génération finale :
+
+```ini
+[IG]
+ig = fsh-generated/resources/ImplementationGuide-mon-projet-ig-fhir.json
+template = https://github.com/NicolasMoreauCPage/ig-template-cpage
+usage-stats-opt-out = true
+copyright-year = 2025
+```
+
+**À modifier :**
+- `ig = fsh-generated/resources/ImplementationGuide-[VOTRE-ID].json` : Utilisez le même ID que dans sushi-config
+- `copyright-year` : Année en cours
+- Gardez le `template` pointant vers le template CPage
+
+### 4. Lien de visualisation GitHub après push
+
+Après avoir poussé vos changements :
+
+1. **Allez sur GitHub** : Ouvrez votre dépôt
+2. **Settings > Pages** : Vérifiez que GitHub Pages est activé sur la branche `gh-pages`
+3. **URL de visualisation** : `https://[votre-nom-utilisateur].github.io/[nom-du-depot]/`
+
+**Exemple :**
+- Dépôt : `https://github.com/monuser/mon-projet-ig`
+- Site : `https://monuser.github.io/mon-projet-ig/`
+
+### 5. Autres configurations importantes
+
+#### package.json (si présent)
+```json
+{
+  "name": "mon-projet-ig",
+  "version": "0.1.0",
+  "description": "Mon IG FHIR"
+}
+```
+
+#### .gitignore
+Assurez-vous d'ignorer :
+```
+output/
+input-cache/
+temp/
+*.log
+```
+
+#### GitHub Actions (optionnel)
+Si vous voulez l'automatisation, gardez le workflow dans `.github/workflows/`.
+
+### Vérification de la configuration
+
+Testez votre configuration :
+```bash
+# Compilez avec SUSHI
+sushi .
+
+# Générez le site
+./_genonce.sh
+
+# Ouvrez le résultat
+open output/index.html
+```
+
+**Erreurs courantes :**
+- ID dupliqué : Changez l'ID dans sushi-config.yaml
+- Canonical URL incorrect : Utilisez une URL que vous contrôlez
+- Template non trouvé : Vérifiez l'URL dans ig.ini
+
 ## Étape 1 : Comprendre la structure
 
 Votre projet IG contient :

@@ -53,6 +53,23 @@ Avant de commencer, assurez-vous de disposer de :
 - Environnement de développement configuré (voir [Installation](installation.html))
 - Accès au dépôt GitHub de l'IG
 
+## ⚠️ Usage du template CPage
+
+**Important : Ce guide et template sont réservés aux projets CPage**
+
+Ce guide documentaire IG FHIR et le template associé sont **exclusivement conçus** pour la création d'Implementation Guides dans le contexte de l'entreprise CPage.
+
+- ✅ **Utilisation autorisée** : IG pour projets CPage (internes, clients, partenaires)
+- ❌ **Utilisation non autorisée** : Projets externes à CPage
+- ❌ **Non autorisé** : Redistribution du template hors écosystème CPage
+
+**Pourquoi cette restriction ?**
+- Configurations spécifiques à CPage (styles, workflows, conformité)
+- Intégration avec l'écosystème CPage
+- Gouvernance et standards internes
+
+Pour des projets externes à CPage, utilisez le [template officiel HL7](https://github.com/HL7/ig-template-base).
+
 ## Plan du guide
 
 Ce guide est organisé de manière progressive :

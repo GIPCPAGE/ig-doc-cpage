@@ -50,6 +50,22 @@ Utilisez le menu de navigation pour explorer les sections qui vous intéressent.
 
 > **Important** : Commencez par la page [Bonnes pratiques](bonnes-pratiques.html) pour comprendre les principes fondamentaux de qualité et conformité.
 
+## 📋 Usage du template et de l'IG clonable
+
+⚠️ **Important : Usage réservé à CPage**
+
+Ce guide documentaire et le template IG associé sont **exclusivement destinés** à la création d'Implementation Guides FHIR pour l'entreprise CPage.
+
+- ✅ **Autorisé** : Création d'IG pour des projets CPage (internes ou clients)
+- ❌ **Non autorisé** : Utilisation pour des projets externes à CPage
+- ❌ **Non autorisé** : Redistribution ou partage du template hors CPage
+
+Pour des projets externes à CPage, utilisez :
+- Le [template officiel HL7](https://github.com/HL7/ig-template-base)
+- Les [outils standards FHIR](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
+
+**Raison** : Ce template intègre des configurations, styles et processus spécifiques à CPage qui ne sont pas adaptés à d'autres contextes.
+
 ## Contribution
 
 Ce guide est évolutif et ouvert à contribution. Pour proposer des améliorations :

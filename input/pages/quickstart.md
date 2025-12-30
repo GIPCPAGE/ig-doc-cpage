@@ -3,6 +3,8 @@
 
 Bienvenue ! Cette page vous guide pour créer votre premier Implementation Guide FHIR en quelques minutes. Pas besoin d'être expert, suivez simplement les étapes.
 
+> ⚠️ **Important** : Ce tutoriel utilise le template IG CPage, qui est **réservé aux projets CPage uniquement**. Pour des projets externes, utilisez le [template officiel HL7](https://github.com/HL7/ig-template-base).
+
 ## Prérequis
 
 - **Environnement configuré** : Si ce n'est pas fait, consultez la page [Installation](installation.html)

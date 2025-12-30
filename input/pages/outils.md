@@ -111,6 +111,8 @@ java -jar validator.jar -version 4.0.1 mon-fichier.json
 
 ## Environnements de développement
 
+> 📋 **Note importante** : Les instructions ci-dessous concernent l'utilisation du **template IG CPage**, qui est **réservé aux projets CPage uniquement**. Ce template intègre des configurations spécifiques (styles, workflows, conformité) adaptées à l'écosystème CPage. Pour des projets externes, utilisez le [template officiel HL7](https://github.com/HL7/ig-template-base).
+
 ### Installation complète (recommandé)
 
 #### Windows (avec droits admin)

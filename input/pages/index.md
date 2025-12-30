@@ -3,6 +3,21 @@
 
 Bienvenue sur le **Guide documentaire IG FHIR** de l’entreprise CPage. Ce guide complet vous accompagne dans la création, la publication et la maintenance d’Implementation Guides (IG) FHIR, en suivant les meilleures pratiques de l’industrie et les standards HL7.
 
+---
+
+## Pourquoi un IG par projet ?
+
+Créer un Implementation Guide (IG) par projet présente de nombreux avantages :
+
+- **Versionnage indépendant** : chaque IG évolue à son propre rythme, facilitant la maintenance.
+- **Gestion claire des dépendances** : chaque IG déclare ses dépendances (profils nationaux, terminologies, etc.) sans impacter les autres.
+- **URLs explicites** : chaque IG possède une URL canonique unique, facilitant l’accès et la traçabilité.
+- **Réutilisation et spécialisation** : il est possible de surspécifier ou d’hériter d’un IG existant pour un nouveau cas d’usage.
+- **Interopérabilité nationale** : chaque IG CPage doit hériter des profils FHIR nationaux (InteropSanté, ANS) s’ils existent, pour garantir la compatibilité avec l’écosystème français.
+
+Documentation officielle : [ImplementationGuide](https://www.hl7.org/fhir/implementationguide.html), [NPM Package](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification)
+
+
 ## Qu'est-ce qu'un IG FHIR ?
 
 Un **Implementation Guide FHIR** est un document structuré qui décrit comment utiliser le standard FHIR (Fast Healthcare Interoperability Resources) pour répondre à un besoin spécifique d’interopérabilité en santé. Il combine :
@@ -66,23 +81,21 @@ L'issue doit contenir :
 
 Utilisez le menu de navigation pour explorer les sections qui vous intéressent.
 
-> **Important** : Commencez par la page [Bonnes pratiques](bonnes-pratiques.html) pour comprendre les principes fondamentaux de qualité et conformité.
+Commencez par la page [Bonnes pratiques](bonnes-pratiques.html) pour comprendre les principes fondamentaux de qualité et conformité.
 
-## 📋 Usage du template et de l'IG clonable
+## Usage du template et de l'IG clonable
 
-⚠️ **Important : Usage réservé à CPage**
+Ce guide documentaire et le template IG associé sont exclusivement destinés à la création d'Implementation Guides FHIR pour l'entreprise CPage.
 
-Ce guide documentaire et le template IG associé sont **exclusivement destinés** à la création d'Implementation Guides FHIR pour l'entreprise CPage.
-
-- ✅ **Autorisé** : Création d'IG pour des projets CPage (internes ou clients)
-- ❌ **Non autorisé** : Utilisation pour des projets externes à CPage
-- ❌ **Non autorisé** : Redistribution ou partage du template hors CPage
+Autorisé : Création d'IG pour des projets CPage (internes ou clients)
+Non autorisé : Utilisation pour des projets externes à CPage
+Non autorisé : Redistribution ou partage du template hors CPage
 
 Pour des projets externes à CPage, utilisez :
-- Le [template officiel HL7](https://github.com/HL7/ig-template-base)
-- Les [outils standards FHIR](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
+- Le template officiel HL7 : https://github.com/HL7/ig-template-base
+- Les outils standards FHIR : https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation
 
-**Raison** : Ce template intègre des configurations, styles et processus spécifiques à CPage qui ne sont pas adaptés à d'autres contextes.
+Ce template intègre des configurations, styles et processus spécifiques à CPage qui ne sont pas adaptés à d'autres contextes.
 
 ## Contribution
 
@@ -93,3 +106,16 @@ Ce guide est évolutif et ouvert à contribution. Pour proposer des amélioratio
 - Contactez l'équipe projet pour toute question
 
 N'hésitez pas à partager vos retours d'expérience pour enrichir ce guide collectif !
+
+---
+
+## Navigation et ressources
+
+- [Table des matières](toc.html) | [QA](output/qa.html) | [Historique](https://github.com/NicolasMoreauCPage/ig-fhir-doc-cpage/commits/main) | [Contact](mailto:interop@cpage.fr)
+
+---
+
+<div style="font-size:0.9em; color:#888; margin-top:2em; border-top:1px solid #eee; padding-top:1em;">
+IG © 2020+ CPage. Basé sur FHIR 4.0.1. Généré le 30/12/2025.<br/>
+Liens : [CPage](https://www.cpage.fr/) | [Documentation ANS](https://interop.esante.gouv.fr/ig/documentation/) | [HL7 France](https://hl7.fr/)
+</div>

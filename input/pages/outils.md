@@ -12,6 +12,7 @@ Développer un Implementation Guide FHIR nécessite un écosystème d'outils com
 - Validation intégrée
 - Génération automatique de documentation
 
+
 **Installation** :
 ```bash
 npm install -g fsh-sushi
@@ -37,6 +38,7 @@ Parent: Patient
 - Validation syntaxique
 - Génération de snapshots
 
+
 **Commandes essentielles** :
 ```bash
 sushi .                    # Compilation complète
@@ -53,6 +55,20 @@ sushi --help              # Aide
 - Génération HTML/CSS/JS
 - Rapports de qualité (QA)
 - Publication prête
+
+### GoFSH (conversion inverse)
+**Rôle** : Convertir des StructureDefinitions JSON/XML existants en FSH
+**Utilité** :
+- Facilite la migration d’anciens projets ou la récupération de profils existants
+- Permet de générer du FSH à partir de ressources déjà publiées
+
+**Commandes clés** :
+```bash
+gofsh .                       # Conversion de tous les JSON du dossier
+gofsh -t json-and-xml .       # Conversion JSON + XML
+gofsh --fshing-trip           # Conversion + compilation + comparaison automatique
+```
+
 
 **Configuration** : `ig.ini` et `sushi-config.yaml`
 
@@ -280,6 +296,8 @@ docker run -it --rm -v $(pwd):/workspace hl7fhir/ig-publisher-base:latest
 - Collaboration facilitée
 
 ## Workflow de développement
+
+> **Conseil** : Travaillez par petites itérations, validez chaque étape (modélisation, compilation, validation) avant de passer à la suivante. Utilisez les scripts automatiques (`_genonce.sh`, `_gencontinuous.sh`) pour gagner du temps.
 
 ### Processus recommandé
 

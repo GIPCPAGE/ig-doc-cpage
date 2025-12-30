@@ -3,7 +3,18 @@
 
 Bienvenue ! Cette page vous guide pour créer votre premier Implementation Guide FHIR en quelques minutes. Pas besoin d'être expert, suivez simplement les étapes.
 
-> ⚠️ **Important** : Ce tutoriel utilise le template IG CPage, qui est **réservé aux projets CPage uniquement**. Pour des projets externes, utilisez le [template officiel HL7](https://github.com/HL7/ig-template-base).
+---
+
+## Navigation par profil utilisateur
+
+Ce guide s'adresse à différents profils :
+- Débutant FHIR : Suivez chaque étape du guide.
+- Modélisateur : Concentrez-vous sur la configuration, la création de profils/extensions, et la validation.
+- Développeur : Portez une attention particulière à la compilation, la validation et aux exemples d'usage.
+- Expert métier : Lisez les sections sur la documentation narrative, la justification des choix et la conformité métier.
+- Architecte : Analysez la structure du projet, la gestion des dépendances et l'intégration dans l'écosystème CPage.
+
+Ce tutoriel utilise le template IG CPage, qui est réservé aux projets CPage uniquement. Pour des projets externes, utilisez le template officiel HL7 : https://github.com/HL7/ig-template-base
 
 ## Outils utilisés dans ce guide
 
@@ -25,10 +36,12 @@ Bienvenue ! Cette page vous guide pour créer votre premier Implementation Guide
 
 ## Prérequis
 
+
 - **Environnement configuré** : Si ce n'est pas fait, consultez la page [Installation](installation.html)
 - **Dépôt cloné** : Vous travaillez dans un dossier IG (comme celui-ci)
 
 ## Configuration après clonage du template IG
+
 
 Après avoir cloné le template IG CPage, vous devez configurer plusieurs fichiers pour personnaliser votre IG. Cette étape est cruciale pour éviter les conflits et personnaliser votre guide d'implémentation.
 
@@ -79,6 +92,7 @@ ig-[organisation]-[standard]-[type]-[projet]
 - `ig-mon-projet-fhir` ❌ (trop générique, risque de conflit)
 
 ### 2. Configuration du sushi-config.yaml
+
 
 Modifiez les informations principales :
 
@@ -283,9 +297,46 @@ Si GitHub Actions est configuré :
 ## Félicitations !
 
 Vous venez de créer votre premier IG FHIR avec :
-- ✅ Une page de documentation
-- ✅ Un profil personnalisé
-- ✅ Un site web généré
+
+## Utilisation du package IG FHIR (.tgz/.zip) dans les serveurs FHIR
+
+### Qu'est-ce que le package généré ?
+
+Après compilation et publication, votre IG FHIR produit un package NPM (généralement nommé `mon-ig-1.0.0.tgz` ou `.zip`). Ce package est le format standard pour distribuer un Implementation Guide FHIR.
+
+**Contenu du package :**
+- Ressources de conformance : StructureDefinition, ValueSet, CodeSystem, CapabilityStatement, etc.
+- Un fichier `package.json` : contient l'identifiant du package, la version, la version FHIR, les dépendances, etc.
+- Documentation et exemples.
+
+Ce format est reconnu par la plupart des serveurs et outils FHIR modernes (HAPI FHIR, Aidbox, Firely, etc.).
+
+### Comment l'intégrer dans un serveur FHIR ?
+
+Selon la plateforme FHIR utilisée, l'intégration du package IG peut se faire de différentes manières :
+
+#### 1. Import direct du package (.tgz)
+Certains serveurs (ex : HAPI FHIR, Aidbox) permettent de charger le package `.tgz` directement via leur interface ou un outil dédié. Les profils, ValueSet, CodeSystem, etc. sont alors enregistrés automatiquement dans le datastore du serveur.
+
+#### 2. Décompression et import manuel
+D'autres solutions demandent de décompresser le package, puis d'importer les ressources individuellement (via API REST, script, ou outil comme UploadFIG).
+
+#### Exemple d'intégration dans HAPI FHIR
+HAPI FHIR (serveur Java open source) propose plusieurs méthodes pour intégrer un IG :
+- **Via l'interface d'administration** : Import du package NPM dans la section "Implementation Guides".
+- **Via l'API REST** : Utilisation de l'endpoint `/ImplementationGuide` pour charger les ressources.
+- **Via un script** : Décompression du `.tgz` et POST des fichiers JSON sur le serveur.
+
+**Documentation HAPI FHIR** : [Guide officiel](https://hapifhir.io/doc_fhir_implementation_guides.html)
+
+### Bonnes pratiques
+- Vérifiez la compatibilité de la version FHIR du package avec celle du serveur.
+- Contrôlez les dépendances dans le `package.json`.
+- Consultez la documentation de votre serveur pour la procédure exacte d'import.
+- Pour les serveurs ne supportant pas l'import direct, utilisez un script pour poster les ressources.
+
+---
+
 
 ## Prochaines étapes
 

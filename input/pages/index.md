@@ -1,17 +1,19 @@
-# Accueil
 
-Bienvenue sur le guide documentaire francophone des guides d’implémentation FHIR. Ce guide s’adresse à tous les acteurs de l’interopérabilité en santé souhaitant comprendre, concevoir, publier ou utiliser un Implementation Guide (IG) FHIR, en s’appuyant sur les meilleures pratiques de la communauté internationale (HL7) et nationale (ANS).
+# Guide documentaire IG FHIR – Accueil
 
-## Objectifs du guide
-- Expliquer le rôle et la structure d’un IG FHIR
-- Présenter les outils et méthodes pour concevoir un IG
-- Détail des bonnes pratiques de modélisation, publication et maintenance
-- Fournir des ressources, liens utiles et exemples concrets
 
-## Public visé
-- Modélisateurs FHIR (FHIR modelers)
-- Implémenteurs FHIR (FHIR implementers)
-- Experts fonctionnels et métiers
-- Toute personne souhaitant contribuer à l’interopérabilité en santé
+Bienvenue sur le guide documentaire IG FHIR de l’entreprise. Ce guide s’adresse à tous les acteurs impliqués dans la conception, la publication et la maintenance d’Implementation Guides FHIR.
 
-Pour naviguer, utilisez le menu ou la table des matières. Ce guide est évolutif et ouvert aux contributions.
+
+**Objectifs :**
+
+
+
+**Public visé :**
+
+
+
+Utilisez le menu pour naviguer dans les différentes sections. Ce guide est évolutif et ouvert à la contribution.
+
+
+> **À lire absolument :** Consultez la page [Bonnes pratiques](bonnes-pratiques.html) pour garantir la qualité et la conformité de vos IG FHIR.

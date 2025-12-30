@@ -52,11 +52,8 @@ ig-[organisation]-[standard]-[type]-[projet]
 - **Pas de caractères spéciaux** : accents, apostrophes, etc. interdits
 - **Unicité globale** : votre ID doit être unique sur tout FHIR (évitez les noms génériques)
 
-**Exemples valides :**
-- `ig-cpage-fhir-guide-patient-management`
-- `ig-ans-hl7v2-spec-si-dep-2025`
-- `ig-hopital-x-fhir-profile-radiologie`
-- `ig-cpage-hprimxml-doc-general`
+**Exemple concret du template CPage :**
+- `ig-cpage-fhir-template` (organisation: cpage, standard: fhir, type: template)
 
 **Exemples invalides :**
 - `mon-projet-ig` ❌ (ne commence pas par `ig-`)
@@ -68,24 +65,20 @@ ig-[organisation]-[standard]-[type]-[projet]
 
 Modifiez les informations principales :
 
+**Exemple concret du template CPage :**
 ```yaml
-id: ig-cpage-fhir-guide-patient-management
-canonical: https://cpage.github.io/ig-cpage-fhir-guide-patient-management  # URL de publication
-name: IG FHIR CPage - Guide Gestion Patient
-title: "Guide d'implémentation FHIR - Gestion des patients"
+id: ig-cpage-fhir-template
+canonical: https://www.cpage.fr/ig/ig-cpage-fhir-template
+name: IG FHIR Template CPage
+title: "Template IG FHIR CPage"
 publisher:
   name: CPage
   url: https://www.cpage.fr
-contact:
-  - name: Équipe FHIR
-    telecom:
-      - system: email
-        value: fhir@cpage.fr
 description: >-
-  Guide d'implémentation FHIR pour la gestion des patients à CPage.
-version: 0.1.0  # Version sémantique
-date: 2025-12-30  # Date du jour
-copyrightYear: 2025  # Année en cours
+  Template d'un IG FHIR CPage.
+version: 0.1.0
+date: 2025-12-30
+copyrightYear: 2025
 ```
 
 **Points importants :**
@@ -111,10 +104,10 @@ copyright-year = 2025
 - `copyright-year` : Année en cours
 - Gardez le `template` pointant vers le template CPage
 
-**Exemple avec ID `ig-cpage-fhir-guide-patient-management` :**
+**Exemple avec ID `ig-cpage-fhir-template` :**
 ```ini
 [IG]
-ig = fsh-generated/resources/ImplementationGuide-ig-cpage-fhir-guide-patient-management.json
+ig = fsh-generated/resources/ImplementationGuide-ig-cpage-fhir-template.json
 template = https://github.com/NicolasMoreauCPage/ig-template-cpage
 usage-stats-opt-out = true
 copyright-year = 2025

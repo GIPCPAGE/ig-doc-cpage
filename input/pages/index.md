@@ -32,6 +32,24 @@ Ce guide s'adresse à tous les acteurs impliqués dans les projets FHIR :
 - **Architectes** : Conception de l'écosystème d'interopérabilité
 - **Toute personne** souhaitant comprendre ou contribuer aux IG FHIR
 
+## À qui est destiné ce guide ?
+
+Ce guide s'adresse à toutes les personnes travaillant avec FHIR :
+
+- **Les FHIR modelers** : Qui créent les guides et profilent des ressources
+- **Les FHIR implementers** : Qui lisent ces guides et développent des APIs
+- **Les experts fonctionnels** : Qui ont la vision métier et challengent les travaux de modélisation
+- **Les architectes** : Qui conçoivent l'écosystème d'interopérabilité
+
+## Reporter un problème ou une suggestion
+
+Vous avez identifié une erreur ou souhaitez proposer une amélioration ? Utilisez l'onglet "Issues" du [dépôt GitHub](https://github.com/NicolasMoreauCPage/ig-fhir-doc-cpage/issues) pour signaler un problème.
+
+L'issue doit contenir :
+- Un titre clair et descriptif
+- Une description détaillée du problème
+- Une proposition de solution si possible
+
 ## Plan du guide
 
 1. **[Prise en main rapide](quickstart.html)** : Premiers pas en 5 minutes

@@ -5,6 +5,24 @@ Bienvenue ! Cette page vous guide pour créer votre premier Implementation Guide
 
 > ⚠️ **Important** : Ce tutoriel utilise le template IG CPage, qui est **réservé aux projets CPage uniquement**. Pour des projets externes, utilisez le [template officiel HL7](https://github.com/HL7/ig-template-base).
 
+## Outils utilisés dans ce guide
+
+### FSH (FHIR Shorthand)
+**Rôle** : Langage de définition des ressources FHIR
+- [Documentation FSH](https://build.fhir.org/ig/HL7/fhir-shorthand/)
+- [Éditeur en ligne](https://fshschool.org/)
+
+### SUSHI
+**Rôle** : Compilateur FSH vers ressources FHIR
+- [Documentation SUSHI](https://fshschool.org/docs/sushi/)
+- Commande de base : `sushi .`
+- Avec snapshots : `sushi -s .`
+
+### IG Publisher
+**Rôle** : Génération du site web de l'IG
+- [Documentation officielle](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
+- Commande : `./_genonce.sh`
+
 ## Prérequis
 
 - **Environnement configuré** : Si ce n'est pas fait, consultez la page [Installation](installation.html)

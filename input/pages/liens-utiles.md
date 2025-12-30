@@ -137,6 +137,24 @@ Cette page centralise les ressources essentielles pour développer, valider et p
 - **GitHub Issues** : [Signaler un problème](https://github.com/NicolasMoreauCPage/ig-doc-cpage/issues)
 - **Pull Requests** : [Contribuer](https://github.com/NicolasMoreauCPage/ig-doc-cpage/pulls)
 
+### IG français (ANS/InteropSanté)
+- [Documentation des IG ANS](https://interop.esante.gouv.fr/ig/documentation/) - Guide complet pour créer des IG
+- [Liste des IG ANS](https://interop.esante.gouv.fr/ig/) - Catalogue complet
+- [INS](https://esante.gouv.fr/ig/ins) - Identifiant National de Santé
+- [MSSanté](https://interop.esante.gouv.fr/ig/mssante) - Messagerie sécurisée
+
+## 🎓 Formation et apprentissage
+
+### Tutoriels interactifs
+- [FSH School](https://fshschool.org/) - Apprentissage FSH pas à pas ⭐
+- [FHIR Tutorials](https://www.hl7.org/fhir/tutorials.html) - Tutoriels officiels
+- [Simplifier FHIR](https://www.hl7.org/fhir/simplifier/home) - Plateforme d'apprentissage
+
+### Communauté
+- [Chat FHIR Zulip](https://chat.fhir.org/) - Discussions communautaires
+- [Forum HL7 FHIR](https://chat.hl7.org/channels/fhir) - Support officiel
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/fhir) - Questions techniques
+
 ### Mise à jour de cette page
 Cette liste évolue constamment. Pour suggérer un nouveau lien ou une correction :
 1. Ouvrez une Issue GitHub

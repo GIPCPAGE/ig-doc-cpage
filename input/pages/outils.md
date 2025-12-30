@@ -318,6 +318,26 @@ docker run -it --rm -v $(pwd):/workspace hl7fhir/ig-publisher-base:latest
 - [US Core](https://github.com/HL7/US-Core)
 - [mCODE](https://github.com/HL7/fhir-mCODE-ig)
 
+## Liens utiles
+
+### Exemples d'Implementation Guides
+
+Des exemples concrets pour s'inspirer :
+
+- **US Core** : [Publication](https://hl7.org/fhir/us/core/), [GitHub](https://github.com/HL7/US-Core)
+- **mCODE** (basé sur US Core) : [Publication](http://hl7.org/fhir/us/mcode/), [GitHub](https://github.com/HL7/fhir-mCODE-ig)
+- **SDC** (Structured Data Capture) : [Publication](http://hl7.org/fhir/uv/sdc/index.html), [GitHub](https://github.com/HL7/sdc)
+
+### Éditeur FSH en ligne
+
+- [FSH School](https://fshschool.org/) : Éditeur FSH interactif avec tutoriels
+- [Documentation FSH](https://build.fhir.org/ig/HL7/fhir-shorthand/)
+
+### Autres ressources
+
+- [IG Publisher - Documentation officielle HL7](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
+- [Clinical Quality Language (CQL)](https://cql.hl7.org/) : Langage d'expression FHIR
+
 ## Dépannage courant
 
 ### SUSHI ne trouve pas les dépendances

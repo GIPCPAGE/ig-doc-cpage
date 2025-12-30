@@ -16,26 +16,38 @@ Après avoir cloné le template IG CPage, vous devez configurer plusieurs fichie
 
 ### 1. Choix de l'ID dans sushi-config.yaml
 
-L'ID doit être **unique et représentatif** de votre projet :
+L'ID doit respecter les **règles strictes des templates FHIR IG** :
 
 ```yaml
-id: mon-projet-ig-fhir  # Changez ceci !
+id: ig-mon-organisation-mon-projet  # Format recommandé
 ```
 
-**Règles pour choisir l'ID :**
-- Utilisez des minuscules et des tirets (pas d'espaces)
-- Évitez les caractères spéciaux
-- Rendez-le unique (votre nom d'organisation + nom du projet)
-- Exemples : `cpage-patient-management`, `hopital-x-radiologie`
+**Règles strictes à respecter :**
+- **Format obligatoire** : `ig-[organisation]-[projet]` (tout en minuscules)
+- **Caractères autorisés** : lettres minuscules, chiffres, tirets uniquement
+- **Pas d'espaces** : remplacez par des tirets
+- **Pas de caractères spéciaux** : accents, apostrophes, etc. interdits
+- **Unicité globale** : votre ID doit être unique sur tout FHIR (évitez les noms génériques)
+
+**Exemples valides :**
+- `ig-cpage-patient-management`
+- `ig-hopital-x-radiologie-2025`
+- `ig-ans-si-dep`
+
+**Exemples invalides :**
+- `mon-projet-ig` ❌ (ne commence pas par `ig-`)
+- `IG-Mon-Projet` ❌ (majuscules interdites)
+- `ig_mon_projet` ❌ (tiret bas interdit)
+- `ig-mon-projet-fhir` ❌ (trop générique, risque de conflit)
 
 ### 2. Configuration du sushi-config.yaml
 
 Modifiez les informations principales :
 
 ```yaml
-id: mon-projet-ig-fhir
-canonical: https://mon-organisation.github.io/mon-projet-ig  # URL de publication
-name: Mon Projet IG FHIR
+id: ig-mon-organisation-mon-projet
+canonical: https://mon-organisation.github.io/ig-mon-organisation-mon-projet  # URL de publication
+name: IG FHIR Mon Organisation - Mon Projet
 title: "Guide d'implémentation FHIR - Mon Projet"
 publisher:
   name: Mon Organisation
@@ -71,9 +83,18 @@ copyright-year = 2025
 ```
 
 **À modifier :**
-- `ig = fsh-generated/resources/ImplementationGuide-[VOTRE-ID].json` : Utilisez le même ID que dans sushi-config
+- `ig = fsh-generated/resources/ImplementationGuide-[VOTRE-ID].json` : Utilisez le même ID que dans sushi-config (format `ig-*`)
 - `copyright-year` : Année en cours
 - Gardez le `template` pointant vers le template CPage
+
+**Exemple avec ID `ig-cpage-mon-projet` :**
+```ini
+[IG]
+ig = fsh-generated/resources/ImplementationGuide-ig-cpage-mon-projet.json
+template = https://github.com/NicolasMoreauCPage/ig-template-cpage
+usage-stats-opt-out = true
+copyright-year = 2025
+```
 
 ### 4. Lien de visualisation GitHub après push
 
@@ -125,9 +146,10 @@ open output/index.html
 ```
 
 **Erreurs courantes :**
-- ID dupliqué : Changez l'ID dans sushi-config.yaml
-- Canonical URL incorrect : Utilisez une URL que vous contrôlez
-- Template non trouvé : Vérifiez l'URL dans ig.ini
+- **Format ID incorrect** : Doit commencer par `ig-` et respecter le kebab-case
+- **Caractères interdits** : Pas de majuscules, espaces, ou caractères spéciaux
+- **ID dupliqué** : Vérifiez que votre ID n'existe pas déjà sur registry.fhir.org
+- **Canonical URL incorrect** : Doit correspondre à l'ID (sans le `ig-` souvent)
 
 ## Étape 1 : Comprendre la structure
 

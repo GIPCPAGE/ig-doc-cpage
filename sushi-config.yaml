@@ -27,48 +27,50 @@ dependencies: {}
 
 pages:
   index.md:
-    title: Bienvenue
-  introduction.md:
-    title: Introduction
+    title: Accueil
   quickstart.md:
     title: Prise en main rapide
+  installation.md:
+    title: Installation de l’environnement
   structure-et-organisation.md:
     title: Structure et organisation
   methodologie-outils-publication.md:
     title: Méthodologie, outils, publication
+  profiles.md:
+    title: Profils FHIR
+  extensions.md:
+    title: Extensions FHIR
+  terminologies.md:
+    title: Terminologies FHIR
   packages.md:
-    title: Utiliser les packages (.tgz / .zip)
+    title: Utiliser les packages IG
+  integration-package.md:
+    title: Intégration package IG
   faq.md:
     title: FAQ
+  bonnes-pratiques.md:
+    title: Bonnes pratiques
   liens-utiles.md:
     title: Liens utiles
   annexes.md:
     title: Annexes
-  integration-package.md:
-    title: Intégration du package IG FHIR
-  documentation.md:
-    title: Documentation
-  downloads.md:
-    title: Téléchargement du guide
 
 menu:
-  "Bienvenue":
-    "Accueil": index.html
-    "Introduction": introduction.html
+  "Accueil": index.html
+  "Guide de démarrage":
     "Prise en main rapide": quickstart.html
-  "Structure et organisation": structure-et-organisation.html
-  "Méthodologie, outils, publication": methodologie-outils-publication.html
-  "Distribution":
-    "Packages IG (.tgz/.zip)": packages.html
-    "Intégration package IG": integration-package.html
+    "Installation de l’environnement": installation.html
+    "Structure et organisation": structure-et-organisation.html
+    "Méthodologie, outils, publication": methodologie-outils-publication.html
+    "Bonnes pratiques": bonnes-pratiques.html
   "Ressources normatives":
-    "Profils": profiles.html
-    "Extensions": extensions.html
-    "Terminologies": terminologies.html
-    "Artifacts (conformité)": artifacts.html
-  "Ressources & Aide":
+    "Profils FHIR": profiles.html
+    "Extensions FHIR": extensions.html
+    "Terminologies FHIR": terminologies.html
+  "Distribution":
+    "Utiliser les packages IG": packages.html
+    "Intégration package IG": integration-package.html
+  "Aide & Annexes":
     "FAQ": faq.html
-    "Documentation IGs (interop)": new-tab https://interop.esante.gouv.fr/ig/documentation/
-    "Téléchargements": downloads.html
     "Liens utiles": liens-utiles.html
-    "Annexes": annexes.md
+    "Annexes": annexes.html

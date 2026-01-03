@@ -1,69 +1,32 @@
-# Méthodologie, outils, publication et validation des IG FHIR
+# Méthodologie, outils, validation et publication d’un IG FHIR
 
-Ce chapitre regroupe les bonnes pratiques, la méthodologie, les outils essentiels, ainsi que les processus de publication et de validation pour un Implementation Guide (IG) FHIR professionnel et conforme aux standards HL7.
+> **Note : Cette méthodologie, les outils et les bonnes pratiques décrits dans cette page s’appliquent spécifiquement aux Implementation Guides FHIR développés par CPage et destinés à l’écosystème CPage.** Les recommandations sont adaptées à nos processus, outils, exigences de qualité et contraintes métier. Pour des projets externes ou des contextes nationaux/internationaux, référez-vous aux guides HL7 ou ANS.
+
+Cette page rassemble toutes les bonnes pratiques, outils, processus de validation, publication et gouvernance pour produire un Implementation Guide FHIR professionnel, maintenable et conforme aux standards HL7.
 
 ---
 
 ## 1. Bonnes pratiques et méthodologie
 
-- **Clarté et accessibilité** : Rédigez pour des développeurs, évitez le jargon, structurez l’information pour une prise en main rapide.
+- **Clarté et accessibilité** : Rédigez pour des développeurs, structurez l’information, évitez le jargon inutile.
 - **Versionning et traçabilité** : Chaque publication doit être versionnée, historisée et documentée.
-- **Réutilisation** : Privilégiez les artefacts existants dans l’écosystème de l’entreprise.
+- **Réutilisation** : Privilégiez les artefacts existants, évitez la duplication.
 - **Qualité et validation** : Testez localement, validez la conformité FHIR, corrigez toutes les erreurs QA avant publication.
 - **Ouverture** : Encouragez la contribution, documentez les issues, facilitez la maintenance.
 
-### Organisation et structure du guide
-- Séparez le contenu normatif (critères de conformité) du non-normatif (contexte, cas d’usage, téléchargements).
-- Privilégiez des pages complètes et structurées, avec des ancres explicites pour la navigation.
-- Présentez les informations dans un ordre logique, mais prévoyez des liens croisés pour les lecteurs qui naviguent aléatoirement.
+> **À retenir** : Structurez l’IG pour qu’un développeur puisse comprendre l’essentiel en 30 minutes.
 
-### Rédaction et narration
-- Rédigez de façon concise, claire et orientée développeur.
+### Conseils rédactionnels
 - Ajoutez des introductions à chaque artefact (profil, extension, etc.) pour expliquer leur utilité et leur contexte.
-- Utilisez des styles narratifs (stu-note, dragon, feedback…) pour attirer l’attention sur des points clés ou avertissements.
-- Structurez l’IG pour qu’un développeur puisse comprendre l’essentiel en 30 minutes.
-- Multipliez les liens internes et externes pour faciliter la navigation et la compréhension.
-
-### Gestion des artefacts et profils
-- Ne créez que les artefacts réellement utiles et maintenables sur le long terme.
-- Utilisez `mustSupport` pour indiquer ce qui doit être supporté, sans surcontraindre la cardinalité.
-- Évitez de forcer la présence de `meta.profile` dans les exemples.
-- Documentez les raisons des choix de conception (rationales) pour faciliter la maintenance.
-- Utilisez des noms explicites, stables et conformes aux conventions FHIR.
-
-### Exemples et extensions
-- Fournissez des exemples couvrant tous les éléments `mustSupport` et toutes les extensions définies.
-- Avant de créer une extension, vérifiez si une extension existante ou un élément du core peut convenir.
-- Documentez les usages attendus et les cas limites.
-
-### Sécurité et confidentialité
-- Ajoutez une section dédiée expliquant les risques, les contre-mesures et les principes de sécurité/confidentialité applicables.
-- Référencez les modules FHIR sur la sécurité et la confidentialité.
-- Indiquez les exigences spécifiques de votre IG et les risques résiduels.
-
-### Maintenance et gouvernance
-- Mettez sous contrôle de version tout le contenu source.
-- Relisez et corrigez l’orthographe et la grammaire.
-- Documentez les changements (changelog, page historique).
-- Planifiez des revues régulières pour intégrer les retours de la communauté.
-- Archivez les anciennes versions et garantissez leur accessibilité.
-
-### Contribution et support
-- Encouragez la participation (issues, suggestions, pull requests).
-- Décrivez clairement le processus de contribution (workflow, validation, publication).
-- Valorisez les contributeurs et maintenez une gouvernance ouverte.
-- Indiquez comment contacter l’équipe ou la communauté pour toute question ou suggestion.
-
-### Liens et ressources
-- Ajoutez des liens vers la documentation officielle FHIR, les guides de bonnes pratiques, les outils et les exemples d’IG.
-- Expliquez les relations avec d’autres IG (dépendances formelles ou informelles).
+- Utilisez des encadrés “Astuce”, “Erreur fréquente”, “À retenir” pour attirer l’attention sur les points clés.
+- Multipliez les liens internes et externes pour faciliter la navigation.
 
 ---
 
 ## 2. Outils essentiels pour les IG FHIR
 
-### FHIR Shorthand (FSH)
-Langage de définition des artefacts FHIR, syntaxe lisible et concise, moins verbeux que JSON/XML, validation intégrée, génération automatique de documentation.
+### FHIR Shorthand (FSH) & SUSHI
+Langage de définition des artefacts FHIR, syntaxe concise, validation intégrée, génération automatique de documentation.
 
 Installation :
 ```bash
@@ -74,23 +37,11 @@ Ressources :
 - [Documentation FSH](https://build.fhir.org/ig/HL7/fhir-shorthand/)
 - [FSH School](https://fshschool.org/)
 
-### SUSHI (FSH Compiler)
-Compilation FSH vers ressources FHIR, génération de StructureDefinitions, création d’exemples, validation syntaxique, génération de snapshots.
-
-Commandes essentielles :
-```bash
-sushi .                    # Compilation complète
-sushi -s .                # Avec snapshots
-sushi --help              # Aide
-```
-
 ### IG Publisher (HL7)
-Génération du site web IG, validation complète des artefacts, génération HTML/CSS/JS, rapports de qualité (QA), publication prête.
+Génération du site web IG, validation complète des artefacts, rapports de qualité (QA), publication prête.
 
 ### GoFSH (conversion inverse)
-Convertir des StructureDefinitions JSON/XML existants en FSH
-- Facilite la migration d’anciens projets ou la récupération de profils existants
-- Permet de générer du FSH à partir de ressources déjà publiées
+Convertir des StructureDefinitions JSON/XML existants en FSH pour faciliter la migration ou la récupération de profils existants.
 
 Commandes clés :
 ```bash
@@ -106,67 +57,62 @@ gofsh --fshing-trip           # Conversion + compilation + comparaison automatiq
 
 ---
 
-## 3. Publication, validation et déploiement
+## 3. Bonnes pratiques de développement et de gestion de projet IG FHIR
 
-### Validation : assurer la qualité
+### Organisation du dépôt
+- **Structure claire** : séparer les sources (FSH), les ressources générées, la documentation, les scripts.
+- **Convention de nommage** : utiliser des noms explicites pour les profils, extensions, exemples.
+- **Documentation intégrée** : chaque artefact doit être documenté (description, usage, contraintes).
 
-#### Types de validation
-- **Validation syntaxique** : FSH, JSON/XML, outils SUSHI et IG Publisher
-- **Validation sémantique** : cohérence des profils, terminologies, exemples
-- **Validation fonctionnelle** : interopérabilité, performance, sécurité
+### Gestion de version et collaboration
+- **Git** : versionner tout le projet, utiliser des branches pour les évolutions majeures.
+- **Revue de code** : valider les contributions via pull requests.
+- **Changelog** : tenir à jour un historique des modifications.
 
-#### Outils de validation
-- IG Publisher : validation automatique lors de la génération
-- FHIR Validator : outil en ligne de commande
-- Touchstone : plateforme de test d’interopérabilité
-- Postman/Newman : tests d’API automatisés
+### Validation continue
+- **Automatiser la validation** : scripts ou CI pour lancer SUSHI, IG Publisher, FHIR Validator à chaque modification.
+- **Rapports QA** : analyser et corriger systématiquement les erreurs et warnings.
 
-#### Critères de qualité
-- 0 erreur dans les logs IG Publisher
-- Exemples valides pour tous les profils
-- Terminologies résolues et à jour
-- Documentation complète et claire
-
-### Publication : rendre accessible
-
-#### Formats de publication
-- **Site web (recommandé)** : génération Jekyll, hébergement GitHub Pages ou serveur interne
-- **Package NPM** : artefacts FHIR et dépendances, publication sur registre NPM ou dépôt privé
-- **Documentation PDF** : usage réglementaire, génération à partir du HTML
-
-#### Processus de publication
-1. Build local : `./_genonce.sh`
-2. Validation : vérifier les logs et rapports QA
-3. Tests : validation croisée avec consommateurs
-4. **Versionning** : Tag Git, numéro de version
-5. **Déploiement** : Push sur branche de publication
-
-### Déploiement automatisé (CI/CD)
-
-À chaque modification sur la branche `main`, le workflow `.github/workflows/build-ig.yml` compile l’IG et publie le site HTML sur GitHub Pages.
-
-Après chaque build, le site est accessible à l’adresse : `https://<utilisateur>.github.io/<nom-du-repo>/`
-
-Le statut du build est consultable dans l’onglet Actions du dépôt GitHub. Les artefacts générés sont téléchargeables après chaque exécution.
-
-Le workflow CI/CD est défini dans `.github/workflows/build-ig.yml` et utilise Java, Ruby/Jekyll et le Publisher HL7. Pour modifier le déploiement, adaptez ce fichier YAML.
-
-Pour le dépannage, consultez les logs dans l’onglet Actions et vérifiez la configuration de GitHub Pages dans les paramètres du dépôt.
-
-Voir aussi :
-- [GitHub Pages](https://docs.github.com/fr/pages)
-- [GitHub Actions](https://docs.github.com/fr/actions)
+### Publication et diffusion
+- **Publication HL7** : suivre le process HL7 France ou international si applicable.
+- **Documentation utilisateur** : fournir un guide d’utilisation, des exemples, des cas d’usage.
+- **Communication** : annoncer les nouvelles versions, recueillir les retours utilisateurs.
 
 ---
 
-## 4. Publication sur GitHub Pages
+## 4. Processus de publication et de maintenance d’un IG FHIR
 
-Pour publier automatiquement votre guide sur GitHub Pages :
-- Rendez-vous dans l’onglet **Settings > Pages** de votre dépôt GitHub.
-- Dans la section "Build and deployment", choisissez **GitHub Actions** comme source de publication.
-- Le reste de la configuration (branche, dossier, workflow) est déjà géré par le fichier GitHub Actions du dépôt.
-- Vérifiez l’URL de publication fournie par GitHub après activation.
+### Cycle de vie d’un IG
+1. **Conception** : recueil des besoins, analyse des cas d’usage, rédaction des spécifications.
+2. **Modélisation** : création des profils, extensions, terminologies, exemples.
+3. **Validation** : tests, validation syntaxique et sémantique, revue par les pairs.
+4. **Publication** : génération du site IG, diffusion, communication.
+5. **Maintenance** : gestion des retours, corrections, évolutions.
+
+### Publication HL7
+- **Préparation** : conformité aux exigences HL7, validation QA, documentation complète.
+- **Processus** : soumission à HL7 France ou international, revue, publication officielle.
+- **Suivi** : gestion des tickets, évolutions, publication de correctifs ou de nouvelles versions.
+
+### Maintenance et évolutions
+- **Support utilisateur** : canal de contact, FAQ, documentation à jour.
+- **Gestion des versions** : planification des évolutions, gestion des breaking changes.
+- **Archivage** : conserver l’historique des versions publiées.
 
 ---
 
-*Dernière mise à jour : 31 décembre 2025*
+## 5. Ressources utiles et liens
+
+- [FHIR Shorthand (FSH) Documentation](https://build.fhir.org/ig/HL7/fhir-shorthand/)
+- [SUSHI (GitHub)](https://github.com/FHIR/sushi)
+- [IG Publisher (HL7)](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
+- [GoFSH (GitHub)](https://github.com/FHIR/gofsh)
+- [FHIR Validator](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator)
+- [FSH School](https://fshschool.org/)
+- [HL7 FHIR France](https://hl7.fr/)
+- [Exemples d’IG FHIR](https://www.hl7.org/fhir/ig/)
+- [FHIR Community Chat](https://chat.fhir.org/)
+
+---
+
+*Pour toute question ou suggestion d’amélioration, contactez l’équipe projet ou contribuez via le dépôt GitHub.*

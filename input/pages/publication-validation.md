@@ -1,5 +1,7 @@
 # Publication, validation et déploiement des IG FHIR
 
+> **Note : Les processus de publication, validation et déploiement décrits dans cette page sont spécifiques aux Implementation Guides FHIR développés et publiés en interne dans l’écosystème CPage.** Les outils, workflows et exigences sont adaptés à notre organisation. Pour des publications nationales ou internationales, référez-vous aux guides HL7 ou ANS.
+
 La publication d'un IG FHIR transforme les artefacts en ressource accessible et maintenable. Cette page détaille le processus de validation, publication et déploiement.
 
 ## Validation : assurer la qualité

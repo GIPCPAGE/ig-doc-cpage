@@ -1,7 +1,59 @@
-
 # Installation de Sushi, Jekyll et dépendances
 
-Ce guide explique comment installer toutes les dépendances nécessaires à la génération d’un IG FHIR : Node.js, Ruby, Java, Sushi, Jekyll, Git, éditeur de texte, et Docker (optionnel), sur Windows et Linux, avec ou sans droits administrateur.
+> **Environnement CPage : Installation automatisée sur Windows 11 sans droits administrateur**
+>
+> Ce guide vous permet d’installer Node.js, Ruby, Jekyll, Git, Java, SUSHI, etc. en mode portable, sans droits admin, et de configurer le PATH pour la session utilisateur. Idéal pour les postes CPage standards.
+>
+> **Script automatisé :**
+>
+> ```powershell
+> # Ouvrez PowerShell (en mode utilisateur)
+> Invoke-WebRequest -Uri "https://raw.githubusercontent.com/NicolasMoreauCPage/ig-fhir-doc-cpage/main/scripts/install-cpage-env.ps1" -OutFile "$env:USERPROFILE\\install-cpage-env.ps1"
+> powershell -ExecutionPolicy Bypass -File "$env:USERPROFILE\\install-cpage-env.ps1"
+> ```
+>
+> **Si le script n’est pas disponible, suivez les étapes manuelles :**
+>
+> 1. **Node.js portable** : Téléchargez [nvm-windows portable](https://github.com/coreybutler/nvm-windows/releases), décompressez dans `C:\Users\<user>\nvm`, puis :
+>    ```powershell
+>    cd $env:USERPROFILE\nvm
+>    .\nvm.exe install lts
+>    .\nvm.exe use lts
+>    $env:PATH = "$env:USERPROFILE\nvm;$env:USERPROFILE\nvm\\nodejs\\node-vXX.X.X-win-x64;$env:PATH"
+>    ```
+> 2. **Git portable** : Téléchargez [Git Portable](https://git-scm.com/download/win), décompressez dans `git-portable`, ajoutez `git-portable\cmd` au PATH.
+> 3. **Ruby portable** : Téléchargez [RubyInstaller portable](https://rubyinstaller.org/downloads/), décompressez dans `ruby-portable`, ajoutez `ruby-portable\bin` au PATH.
+> 4. **Jekyll et Bundler** :
+>    ```powershell
+>    gem install --user-install jekyll bundler
+>    $env:PATH = "$env:USERPROFILE\.gem\ruby\<version>\bin;$env:PATH"
+>    ```
+> 5. **Java portable** : Téléchargez [Adoptium JDK zip](https://adoptium.net/temurin/releases/?version=17), décompressez dans `jdk-portable`, ajoutez `jdk-portable\bin` au PATH.
+> 6. **SUSHI (FSH)** :
+>    ```powershell
+>    npm install --save-dev fsh-sushi
+>    npx sushi --version
+>    ```
+>
+> **Pour rendre le PATH persistant** :
+> ```powershell
+> [Environment]::SetEnvironmentVariable("PATH", "<tous_les_chemins>;" + [Environment]::GetEnvironmentVariable("PATH", "User"), "User")
+> ```
+>
+> **Vérification** :
+> ```powershell
+> node --version
+> npm --version
+> git --version
+> ruby --version
+> jekyll --version
+> java -version
+> npx sushi --version
+> ```
+>
+> Si chaque commande retourne une version, l’environnement est prêt pour travailler sur les IG FHIR CPage.
+
+---
 
 ## 1. Prérequis communs
 

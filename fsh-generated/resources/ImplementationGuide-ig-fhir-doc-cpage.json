@@ -53,17 +53,17 @@
       "page": [
         {
           "nameUrl": "index.html",
-          "title": "Bienvenue",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "introduction.html",
-          "title": "Introduction",
+          "title": "Accueil",
           "generation": "markdown"
         },
         {
           "nameUrl": "quickstart.html",
           "title": "Prise en main rapide",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "installation.html",
+          "title": "Installation de l’environnement",
           "generation": "markdown"
         },
         {
@@ -77,13 +77,38 @@
           "generation": "markdown"
         },
         {
+          "nameUrl": "profiles.html",
+          "title": "Profils FHIR",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "extensions.html",
+          "title": "Extensions FHIR",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "terminologies.html",
+          "title": "Terminologies FHIR",
+          "generation": "markdown"
+        },
+        {
           "nameUrl": "packages.html",
-          "title": "Utiliser les packages (.tgz / .zip)",
+          "title": "Utiliser les packages IG",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "integration-package.html",
+          "title": "Intégration package IG",
           "generation": "markdown"
         },
         {
           "nameUrl": "faq.html",
           "title": "FAQ",
+          "generation": "markdown"
+        },
+        {
+          "nameUrl": "bonnes-pratiques.html",
+          "title": "Bonnes pratiques",
           "generation": "markdown"
         },
         {
@@ -94,21 +119,6 @@
         {
           "nameUrl": "annexes.html",
           "title": "Annexes",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "integration-package.html",
-          "title": "Intégration du package IG FHIR",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "documentation.html",
-          "title": "Documentation",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "downloads.html",
-          "title": "Téléchargement du guide",
           "generation": "markdown"
         }
       ]

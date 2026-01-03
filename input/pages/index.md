@@ -1,87 +1,73 @@
+---
 
+# Guide professionnel des Implementation Guides FHIR (CPage)
 
-Bienvenue sur le guide documentaire IG FHIR de l’entreprise CPage. Ce document vous accompagne dans la création, la publication et la maintenance d’Implementation Guides (IG) FHIR, en s’appuyant sur les pratiques de l’industrie et les standards HL7.
+> **Bienvenue !** Ce guide didactique vous accompagne pas à pas dans la conception, la publication et la maintenance d’Implementation Guides (IG) FHIR, selon les standards HL7 et les meilleures pratiques de l’industrie. Il s’adresse à tous les acteurs de l’interopérabilité en santé : modélisateurs, développeurs, experts métier, architectes, ou toute personne souhaitant comprendre ou contribuer aux IG FHIR.
 
 ---
 
+## À propos des IG FHIR
 
-## Pourquoi un IG par projet ?
+Un Implementation Guide (IG) FHIR est un document structurant qui décrit comment utiliser le standard FHIR pour répondre à un besoin d’interopérabilité. Il regroupe :
+- **Profils** (contraintes sur les ressources FHIR)
+- **Extensions** (ajouts personnalisés)
+- **Terminologies** (codes, value sets)
+- **Exemples** (cas concrets)
+- **Documentation narrative**
 
-Créer un Implementation Guide (IG) par projet permet d’assurer un versionnage indépendant, une gestion claire des dépendances, des URLs explicites, la réutilisation et la spécialisation, ainsi qu’une meilleure interopérabilité avec l’écosystème national. Chaque IG CPage doit hériter des profils FHIR nationaux (InteropSanté, ANS) s’ils existent.
+Chaque IG est publié sous forme de site web interactif et de package NPM, facilitant sa réutilisation et son intégration dans l’écosystème FHIR.
 
-Pour aller plus loin : [ImplementationGuide](https://www.hl7.org/fhir/implementationguide.html), [NPM Package](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification)
+> **Astuce** : Créez un IG par projet pour garantir un versionnage indépendant, une gestion claire des dépendances, et une meilleure interopérabilité. Chaque IG CPage doit hériter des profils nationaux (InteropSanté, ANS) s’ils existent.
 
+Pour aller plus loin : [ImplementationGuide](https://www.hl7.org/fhir/implementationguide.html), [NPM Package](https://confluence.hl7.org/display/FHIR/NPM+Package+Specification)
 
-
-## Qu'est-ce qu'un IG FHIR ?
-
-Un Implementation Guide FHIR est un document qui décrit comment utiliser le standard FHIR pour répondre à un besoin d’interopérabilité en santé. Il regroupe profils, extensions, exemples, documentation narrative et terminologies. L’IG est publié sous forme de site web interactif et de package NPM, pour faciliter sa réutilisation et son intégration.
-
-
-## Objectifs du guide
-
-Ce guide vise à structurer votre démarche, à présenter les outils nécessaires (SUSHI, IG Publisher…), à exposer les bonnes pratiques et à faciliter la collaboration autour des IG FHIR.
-
-
-## Public visé
-
-Ce guide s’adresse à tous les acteurs impliqués dans les projets FHIR : modélisateurs, développeurs, experts métier, architectes, ou toute personne souhaitant comprendre ou contribuer aux IG FHIR.
-
-
-## Signaler un problème ou une suggestion
-
-Vous avez identifié une erreur ou souhaitez proposer une amélioration ? Utilisez l'onglet "Issues" du [dépôt GitHub](https://github.com/NicolasMoreauCPage/ig-fhir-doc-cpage/issues) pour signaler un problème.
-
-L'issue doit contenir :
-- Un titre clair et descriptif
-- Une description détaillée du problème
-- Une proposition de solution si possible
+---
 
 ## Plan du guide
 
 1. **[Prise en main rapide](quickstart.html)** : Premiers pas en 5 minutes
-2. **[Installation](installation.html)** : Configuration de l'environnement de développement
-3. **[Structure d'un IG](structure-ig.html)** : Organisation des fichiers et dossiers
-4. **[Profils](profiles.html)** : Création et gestion des profils FHIR
-5. **[Extensions](extensions.html)** : Définition d'extensions personnalisées
-6. **[Terminologies](terminologies.html)** : Gestion des codes et value sets
-7. **[Méthodologie, outils, publication](methodologie-outils-publication.html)** : Bonnes pratiques, outils, publication, validation, versionning
-8. **[FAQ](faq.html)** : Questions fréquentes
-9. **[Liens utiles](liens-utiles.html)** : Ressources complémentaires
-10. **[Utiliser les packages (.tgz / .zip)](packages.html)** : Création, publication et import de packages IG
+2. **[Installation de l’environnement](installation.html)** : Préparer son poste
+3. **[Organiser son projet IG FHIR](structure-et-organisation.html)** : Structure logique et technique, arborescence, menu
+4. **[Profils FHIR](profiles.html)** : Contraindre et spécialiser les ressources
+5. **[Extensions FHIR](extensions.html)** : Ajouter des éléments personnalisés
+6. **[Terminologies FHIR](terminologies.html)** : Codes, value sets, bonnes pratiques
+7. **[Méthodologie, outils, publication](methodologie-outils-publication.html)** : Qualité, validation, CI/CD, publication, gouvernance
+8. **[Utiliser et intégrer les packages](packages.html)** : Création, publication, import, cas d’usage
+9. **[FAQ](faq.html)** : Questions fréquentes, erreurs courantes
+10. **[Liens utiles](liens-utiles.html)** : Ressources complémentaires
 
-Utilisez le menu de navigation pour explorer les sections qui vous intéressent.
-
-Commencez par la page [Méthodologie, outils, publication](methodologie-outils-publication.html) pour comprendre les principes fondamentaux de qualité, de conformité, d'outillage et de publication.
-
-## Usage du template et de l'IG clonable
-
-Ce guide documentaire et le template IG associé sont exclusivement destinés à la création d'Implementation Guides FHIR pour l'entreprise CPage.
-
-Autorisé : Création d'IG pour des projets CPage (internes ou clients)
-Non autorisé : Utilisation pour des projets externes à CPage
-Non autorisé : Redistribution ou partage du template hors CPage
-
-Pour des projets externes à CPage, utilisez :
-- Le template officiel HL7 : https://github.com/HL7/ig-template-base
-- Les outils standards FHIR : https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation
-
-Ce template intègre des configurations, styles et processus spécifiques à CPage qui ne sont pas adaptés à d'autres contextes.
-
-## Contribution
-
-Ce guide est évolutif et ouvert à contribution. Pour proposer des améliorations :
-
-- Ouvrez une **Issue** sur le dépôt GitHub
-- Soumettez une **Pull Request** avec vos modifications
-- Contactez l'équipe projet pour toute question
-
-N'hésitez pas à partager vos retours d'expérience pour enrichir ce guide collectif !
+Utilisez le menu ou la table des matières pour naviguer. Commencez par la page [Prise en main rapide](quickstart.html) ou [Méthodologie, outils, publication](methodologie-outils-publication.html) pour comprendre les fondamentaux.
 
 ---
 
-## Navigation et ressources
+## Contribution et support
 
-- [Table des matières](toc.html) | [QA](output/qa.html) | [Historique](https://github.com/NicolasMoreauCPage/ig-fhir-doc-cpage/commits/main) | [Contact](mailto:interop@cpage.fr)
+Ce guide est évolutif et ouvert à la contribution :
+- Ouvrez une **Issue** sur le [dépôt GitHub](https://github.com/NicolasMoreauCPage/ig-fhir-doc-cpage/issues)
+- Soumettez une **Pull Request**
+- Contactez l’équipe projet pour toute question
+
+> **Contact** : [interop@cpage.fr](mailto:interop@cpage.fr)
+
+---
+
+## Usage du template CPage
+
+Ce guide et le template IG associé sont réservés à la création d’IG FHIR pour l’entreprise CPage.
+
+- **Autorisé** : Projets CPage (internes ou clients)
+- **Non autorisé** : Projets externes à CPage, redistribution hors CPage
+
+Pour des projets externes, utilisez :
+- [Template officiel HL7](https://github.com/HL7/ig-template-base)
+- [Outils standards FHIR](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation)
+
+---
+
+## Historique et ressources
+
+- [Historique du guide](https://github.com/NicolasMoreauCPage/ig-fhir-doc-cpage/commits/main)
+- [Table des matières](toc.html)
+- [Rapport QA](output/qa.html)
 
 ---

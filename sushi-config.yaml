@@ -27,23 +27,15 @@ dependencies: {}
 
 pages:
   index.md:
-    title: Accueil
+    title: Bienvenue
   introduction.md:
     title: Introduction
   quickstart.md:
     title: Prise en main rapide
-  structure-ig.md:
-    title: Structure d’un IG
-  structure-pages-menu.md:
-    title: Structure des pages & menu
-  outils.md:
-    title: Outils et technologies
-  bonnes-pratiques.md:
-    title: Bonnes pratiques
-  publication-validation.md:
-    title: Publication et validation
-  versioning.md:
-    title: Versionnement d’un IG
+  structure-et-organisation.md:
+    title: Structure et organisation
+  methodologie-outils-publication.md:
+    title: Méthodologie, outils, publication
   packages.md:
     title: Utiliser les packages (.tgz / .zip)
   faq.md:
@@ -60,18 +52,13 @@ pages:
     title: Téléchargement du guide
 
 menu:
-  "Accueil": index.html
-  "Introduction": introduction.html
-  "Prise en main rapide": quickstart.html
-  "Structure du guide":
-    "Vue d'ensemble": structure-ig.html
-    "Pages & menu": structure-pages-menu.html
-    "Structure projet": structure-projet.html
-  "Outils et technologies": outils.html
-  "Bonnes pratiques": bonnes-pratiques.html
-  "Publication et distribution":
-    "Publication et validation": publication-validation.html
-    "Versionnement": versioning.html
+  "Bienvenue":
+    "Accueil": index.html
+    "Introduction": introduction.html
+    "Prise en main rapide": quickstart.html
+  "Structure et organisation": structure-et-organisation.html
+  "Méthodologie, outils, publication": methodologie-outils-publication.html
+  "Distribution":
     "Packages IG (.tgz/.zip)": packages.html
     "Intégration package IG": integration-package.html
   "Ressources normatives":
@@ -79,9 +66,9 @@ menu:
     "Extensions": extensions.html
     "Terminologies": terminologies.html
     "Artifacts (conformité)": artifacts.html
-  "FAQ": faq.html
-  "Documentation et annexes":
+  "Ressources & Aide":
+    "FAQ": faq.html
     "Documentation IGs (interop)": new-tab https://interop.esante.gouv.fr/ig/documentation/
     "Téléchargements": downloads.html
     "Liens utiles": liens-utiles.html
-    "Annexes": annexes.html
+    "Annexes": annexes.md

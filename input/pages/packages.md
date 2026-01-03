@@ -54,6 +54,50 @@ Exemple : restauration des ressources depuis un package NPM local (script Node.j
 // pseudo-code : lire le .tgz, extraire, parcourir resources/*.json, POST /<resource> au serveur FHIR
 ```
 
+## Utiliser un package IG dans un développement Java
+
+Pour exploiter un package IG FHIR (.tgz ou .zip) dans une application Java (par exemple pour générer automatiquement des objets Java correspondant aux StructureDefinition, ValueSet, etc.) :
+
+### 1. Extraire les ressources du package
+
+- Décompressez le package (`.tgz` ou `.zip`). Les ressources FHIR (JSON) se trouvent généralement dans le dossier `package/resources/` ou `fsh-generated/resources/`.
+
+### 2. Utiliser HAPI FHIR pour charger les artefacts
+
+- Ajoutez la dépendance HAPI FHIR à votre projet Maven/Gradle.
+- Utilisez les classes HAPI pour parser les fichiers JSON et manipuler les ressources :
+
+```java
+// Exemple pour charger un ValueSet depuis un fichier JSON
+FhirContext ctx = FhirContext.forR4();
+IParser parser = ctx.newJsonParser();
+ValueSet vs = parser.parseResource(ValueSet.class, new FileReader("path/to/ValueSet-example.json"));
+```
+
+- Pour charger tous les artefacts d’un package :
+  - Parcourez le dossier des ressources, détectez le type (StructureDefinition, ValueSet, etc.) et chargez-les avec le parser HAPI.
+
+### 3. Générer des classes Java à partir des profils (optionnel)
+
+- Utilisez l’outil [HAPI FHIR Codegen](https://github.com/hapifhir/org.hl7.fhir.core/tree/master/tools/java/org.hl7.fhir.codegen) pour générer des classes Java à partir des StructureDefinition personnalisés.
+- Commande typique :
+
+```bash
+java -jar org.hl7.fhir.codegen.jar -d chemin/vers/StructureDefinition/ -o chemin/sortie/ -n mon.namespace
+```
+
+- Les classes générées peuvent ensuite être utilisées dans votre application pour manipuler les ressources typées.
+
+### 4. Utilisation avancée
+
+- Pour valider des instances contre les profils du package, chargez les StructureDefinition dans un `ValidationSupport` HAPI.
+- Pour exploiter les ValueSet, CodeSystem, etc., chargez-les de la même façon et utilisez les API HAPI pour la validation ou l’expansion.
+
+### Ressources utiles
+- [HAPI FHIR Documentation](https://hapifhir.io/)
+- [FHIR Codegen](https://github.com/hapifhir/org.hl7.fhir.core/tree/master/tools/java/org.hl7.fhir.codegen)
+- [Exemple d’import de package IG en Java (HAPI)](https://github.com/hapifhir/hapi-fhir/blob/master/hapi-fhir-structures-r4/src/test/java/ca/uhn/fhir/validation/ValidationSupportChainTest.java)
+
 ## Conseils pratiques
 
 - Privilégier le format NPM `.tgz` pour l'interopérabilité avec l'écosystème FHIR.

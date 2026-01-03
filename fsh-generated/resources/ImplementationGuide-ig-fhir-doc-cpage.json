@@ -53,7 +53,7 @@
       "page": [
         {
           "nameUrl": "index.html",
-          "title": "Accueil",
+          "title": "Bienvenue",
           "generation": "markdown"
         },
         {
@@ -67,33 +67,13 @@
           "generation": "markdown"
         },
         {
-          "nameUrl": "structure-ig.html",
-          "title": "Structure d’un IG",
+          "nameUrl": "structure-et-organisation.html",
+          "title": "Structure et organisation",
           "generation": "markdown"
         },
         {
-          "nameUrl": "structure-pages-menu.html",
-          "title": "Structure des pages & menu",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "outils.html",
-          "title": "Outils et technologies",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "bonnes-pratiques.html",
-          "title": "Bonnes pratiques",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "publication-validation.html",
-          "title": "Publication et validation",
-          "generation": "markdown"
-        },
-        {
-          "nameUrl": "versioning.html",
-          "title": "Versionnement d’un IG",
+          "nameUrl": "methodologie-outils-publication.html",
+          "title": "Méthodologie, outils, publication",
           "generation": "markdown"
         },
         {

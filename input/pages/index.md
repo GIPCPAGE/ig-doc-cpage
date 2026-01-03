@@ -1,6 +1,4 @@
 
-# Guide documentaire IG FHIR – Accueil
-
 
 Bienvenue sur le guide documentaire IG FHIR de l’entreprise CPage. Ce document vous accompagne dans la création, la publication et la maintenance d’Implementation Guides (IG) FHIR, en s’appuyant sur les pratiques de l’industrie et les standards HL7.
 
@@ -47,17 +45,14 @@ L'issue doit contenir :
 4. **[Profils](profiles.html)** : Création et gestion des profils FHIR
 5. **[Extensions](extensions.html)** : Définition d'extensions personnalisées
 6. **[Terminologies](terminologies.html)** : Gestion des codes et value sets
-7. **[Bonnes pratiques](bonnes-pratiques.html)** : Recommandations essentielles
-8. **[Publication et validation](publication-validation.html)** : Déploiement et qualité
-9. **[Outils](outils.html)** : Écosystème technique FHIR
-10. **[FAQ](faq.html)** : Questions fréquentes
-11. **[Liens utiles](liens-utiles.html)** : Ressources complémentaires
-12. **[Versionnement d'un IG](versioning.html)** : Stratégies de gestion des versions et bonnes pratiques
-13. **[Utiliser les packages (.tgz / .zip)](packages.html)** : Création, publication et import de packages IG
+7. **[Méthodologie, outils, publication](methodologie-outils-publication.html)** : Bonnes pratiques, outils, publication, validation, versionning
+8. **[FAQ](faq.html)** : Questions fréquentes
+9. **[Liens utiles](liens-utiles.html)** : Ressources complémentaires
+10. **[Utiliser les packages (.tgz / .zip)](packages.html)** : Création, publication et import de packages IG
 
 Utilisez le menu de navigation pour explorer les sections qui vous intéressent.
 
-Commencez par la page [Bonnes pratiques](bonnes-pratiques.html) pour comprendre les principes fondamentaux de qualité et conformité.
+Commencez par la page [Méthodologie, outils, publication](methodologie-outils-publication.html) pour comprendre les principes fondamentaux de qualité, de conformité, d'outillage et de publication.
 
 ## Usage du template et de l'IG clonable
 

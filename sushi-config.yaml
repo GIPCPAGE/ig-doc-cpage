@@ -2,7 +2,7 @@ id: ig-fhir-doc-cpage
 canonical: https://www.cpage.fr/ig/ig-fhir-doc-cpage
 name: IG FHIR Doc CPage
 status: draft
-version: 0.1.0
+version: 1.0.0
 date: 2025-12-30
 title: Guide documentaire IG FHIR CPage
 publisher:

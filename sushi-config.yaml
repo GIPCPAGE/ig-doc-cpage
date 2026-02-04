@@ -1,5 +1,5 @@
-id: ig-fhir-doc-cpage
-canonical: https://www.cpage.fr/ig/ig-fhir-doc-cpage
+id: ig-doc-cpage
+canonical: https://www.cpage.fr/interoperabilite/fhir/
 name: IG FHIR Doc CPage
 status: draft
 version: 1.0.0
